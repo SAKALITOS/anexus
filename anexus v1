@@ -8,10 +8,12 @@
                                 local Main = Window:NewTab("Main")
                                 local MainSection = Main:NewSection("hey, " .. game.Players.LocalPlayer.DisplayName)
                    
-  -- tools
-  local tools = Window:NewTab("Tools")
+ --JUGADOR
+                                local JUGADOR = Window:NewTab("Tools")
+                              
 
-toolsSection = NewTextBox("TextboxText", "TextboxInfo", function(txt)
+                                J
+JUGADORSection:NewTextBox("Amount", "TextboxInfo", function(txt)
 	print(txt)
 end)
 

@@ -10,7 +10,7 @@
                    
   -- tools
   local tools = Window:NewTab("Tools")
-  toolsSection:NewTextBox("Amount", "TextboxInfo", function(txt)
+  toolsSection:toolsNewTextBox("Amount", "TextboxInfo", function(txt)
 
 end)
 

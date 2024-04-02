@@ -11,6 +11,7 @@
  
                                 -- JUGADOR
                                 local JUGADOR = Window:NewTab("Tools")
+                                local JUGADORSection = JUGADOR:NewSection("Tools")
 
                               JUGADORSection:NewTextBox("Amount", "TextboxInfo", function(txt)
 end)

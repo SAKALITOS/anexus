@@ -10,9 +10,6 @@
                    
  --JUGADOR
                                 local JUGADOR = Window:NewTab("Tools")
-                              
-
-                                J
 JUGADORSection:NewTextBox("Amount", "TextboxInfo", function(txt)
 	print(txt)
 end)

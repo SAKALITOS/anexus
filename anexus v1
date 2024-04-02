@@ -6,6 +6,5 @@
                                 local Main = Window:NewTab("Main")
                                 local MainSection = Main:NewSection("Hey, " .. game.Players.LocalPlayer.DisplayName)
                                
-
-
+end
 

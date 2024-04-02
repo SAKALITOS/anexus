@@ -7,9 +7,8 @@
                    
  
                                 -- tool
-                                local DIVERSION = Window:NewTab("Tool")
-                                local DIVERSION = DIVERSION:NewSection("Dupe tool")
-                                DIVERSIONSection:NewTextBox("amount", "TextboxInfo", function(txt)
-
+                                local JUGADOR = Window:NewTab("Tool")
+                                local JUGADOR = JUGADOR:NewSection("Dupe tool")
+                                      JUGADORSection:NewTextBox("", "", function(txt)
+                                  
                                 end)
-

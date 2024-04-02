@@ -1,6 +1,18 @@
- local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SAKALITOS/newframe/main/st1"))()
+
+
+
+                    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SAKALITOS/newframe/main/st1"))()
                                 local Window = Library.CreateLib("Anexus hub 1.0 ", "BloodTheme")
 
                                 -- Main
                                 local Main = Window:NewTab("Main")
                                 local MainSection = Main:NewSection("hey, " .. game.Players.LocalPlayer.DisplayName)
+                   
+ 
+                                local JUGADOR = Window:NewTab("Tools")
+                                
+                              JUGADORSection:NewTextBox("Amount", "TextboxInfo", function(txt)
+	print(txt)
+end)
+
+  

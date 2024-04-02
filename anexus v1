@@ -11,7 +11,7 @@
   -- tools
   local tools = Window:NewTab("Tools")
 
-toolsSection:NewTextBox("TextboxText", "TextboxInfo", function(txt)
+toolsSection = NewTextBox("TextboxText", "TextboxInfo", function(txt)
 	print(txt)
 end)
 

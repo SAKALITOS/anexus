@@ -7,8 +7,9 @@
                    
  
                                 -- tool
-                                local tool = Window:NewTab("Tools")
-                                local tool = tool:NewSection("Dupe tool")
-                                toolSection:NewTextBox("TextboxText", "TextboxInfo", function(txt)
-	print(txt)
-end)
+                                local DIVERSION = Window:NewTab("Tool")
+                                local DIVERSION = DIVERSION:NewSection("Dupe tool")
+                                toolSection:NewTextBox("amount", "TextboxInfo", function(txt)
+
+                                end)
+

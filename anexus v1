@@ -12,8 +12,9 @@
                                 -- tool
                                 local tool = Window:NewTab("Tools")
                                 local tool = tool:NewSection("Tools")
+                                local toolSection = tool:NewSection("Dupe tool")
 
-                              ToolsSection:NewTextBox("Amount", "TextboxInfo", function(txt)
+                              toolSection:NewTextBox("Amount", "TextboxInfo", function(txt)
 end)
 
   

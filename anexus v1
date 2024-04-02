@@ -8,7 +8,7 @@
  
                                 -- tool
                                 local JUGADOR = Window:NewTab("Tool")
-                                local JUGADOR = JUGADOR:NewSection("Dupe tool")
+                                local JUGADOR = JUGADOR:NewSection("Dupe tool1")
                                             JUGADORSection:NewTextBox("SALTO", "determinas tu salto ", function(txt)
                                     game.Players.LocalPlayer.Character.Humanoid.JumpPower = txt
                                 end)

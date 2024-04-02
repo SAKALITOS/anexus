@@ -13,7 +13,7 @@
                                 local tool = Window:NewTab("Tools")
                                 local tool = tool:NewSection("Tools")
 
-                              toolSection:NewTextBox("Amount", "TextboxInfo", function(txt)
+                              ToolsSection:NewTextBox("Amount", "TextboxInfo", function(txt)
 end)
 
   

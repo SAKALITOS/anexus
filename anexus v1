@@ -9,7 +9,7 @@
                                 -- tool
                                 local DIVERSION = Window:NewTab("Tool")
                                 local DIVERSION = DIVERSION:NewSection("Dupe tool")
-                                toolSection:NewTextBox("amount", "TextboxInfo", function(txt)
+                                DIVERSIONSection:NewTextBox("amount", "TextboxInfo", function(txt)
 
                                 end)
 

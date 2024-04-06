@@ -15,7 +15,7 @@ local Window = Library.CreateLib("Anexus hub 1.0 ", "BloodTheme")
                                    
                                 end)
 
-                                ObjetosSection:NewButton("Dup FireX", "you know read?", function()
+                                ObjetosSection:NewButton("Dupe FireX", "you know read?", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local initialPosition = character.HumanoidRootPart.Position
@@ -42,4 +42,4 @@ until i > 40
 
 character.HumanoidRootPart.CFrame = CFrame.new(initialPosition)
                                 end)
-                                
+

@@ -1,45 +1,928 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SAKALITOS/newframe/main/st1"))()
-local Window = Library.CreateLib("Anexus hub 1.0 ", "BloodTheme")
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("anexus hub", "BloodTheme")
 
-  -- Main
-                                local Main = Window:NewTab("Main")
-                                local MainSection = Main:NewSection("Hey," .. game.Players.LocalPlayer.DisplayName)
-                                local MainSection = Main:NewSection("")
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Hey, " .. game.Players.LocalPlayer.DisplayName)
+local MainSection = Main:NewSection("Version - BETA")
+local MainSection = Main:NewSection("")
+                                                                                      
+                                                                                                                          
+                                --Objetos
+
+                                local Objetos = Window:NewTab("Tools")
+                            
+  
+  
+                                local ObjetosSection = Objetos:NewSection("Tools")
+
+                                ObjetosSection:NewButton("Clean", "", function()
+                                    local args = {
+                                        [1] = "ClearAllTools"
+                                    }
+                                    
+                                    game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Clea1rTool1s"):FireServer(unpack(args))
+                                    
+                                end) 
+
+                                ObjetosSection:NewButton("Equip all", "equip only tools in you inventory", function()
+                                  local Players = game:GetService("Players")
+                                  local LocalPlayer = Players.LocalPlayer
+                                  
+                                  function equipAllTools()
+                                      local backpack = LocalPlayer.Backpack
+                                      local character = LocalPlayer.Character
+                                      
+                                      for _, tool in pairs(backpack:GetChildren()) do
+                                          if tool:IsA("Tool") then
+                                              tool.Parent = character
+                                          end
+                                      end
+                                  end
+                                  
+                                  equipAllTools()
+                                  
+                                  
+                              end)
+                              
+                              local ObjetosSection = Objetos:NewSection("Sound tools")
+
+                             
+
+                              ObjetosSection:NewButton("Taser sound", "you know read", function(state)
+
+                                local player = game.Players.LocalPlayer
+                                local character = player.Character or player.CharacterAdded:Wait()
+                                local initialPosition = character.HumanoidRootPart.Position
                                 
-                                  --Objetos
+                                
+                                local destination = Vector3.new(-162.390015, 5.58922815, 63.4312439, -0.0539480448, -2.20035545e-08, -0.998543739, -6.31496206e-08, 1, -1.86238776e-08, 0.998543739, 6.20529406e-08, -0.0539480448)
+                                
+                                
+                                i = 1
+                                repeat
+                                
+                                
+                                character.HumanoidRootPart.CFrame = CFrame.new(destination)
+                                
+                                
+                                fireclickdetector(Workspace.WorkspaceCom["001_GiveTools"].Taser.ClickDetector)
+                                
+                                wait()
+                                
+                                  i = i + 1
+                                until i > 600
+                                
+                                
+                                
+                                character.HumanoidRootPart.CFrame = CFrame.new(initialPosition)
+                                
+                                                end)
 
-                                local Objetos = Window:NewTab("Tool")
-                                local ObjetosSection = Objetos:NewSection("Dupe tools")
-
-                        ObjetosSection:NewTextBox("Amount", "number of duplications", function(txt)
-                                   
-                                end)
-
-                                ObjetosSection:NewButton("Dupe FireX", "you know read?", function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local initialPosition = character.HumanoidRootPart.Position
 
 
-local destination = Vector3.new(184.69374084472656, 6.31087064743042, 55.98150634765625)
+                                                local ObjetosSection = Objetos:NewSection("Throwable tools")
+
+                                                ObjetosSection:NewButton("Basketball", "you know read", function(steate)
+                                                  local player = game.Players.LocalPlayer
+                                                  local character = player.Character or player.CharacterAdded:Wait()
+                                                  local initialPosition = character.HumanoidRootPart.Position
+                                                  
+                                                  
+                                                  local destination = Vector3.new(-139.776123, 3.34105968, 97.4123917, -0.794463634, -4.82766827e-10, 0.607311726, -2.34468409e-08, 1, -2.98773983e-08, -0.607311726, -3.79760472e-08, -0.794463634)
+                                                  
+                                                  
+                                                  i = 1
+                                                  repeat
+                                                  
+                                                  
+                                                  character.HumanoidRootPart.CFrame = CFrame.new(destination)
+                                                  
+                                                  
+                                                  fireclickdetector(Workspace.WorkspaceCom["001_GiveTools"].Basketball.ClickDetector)
+                                                  
+                                                  wait()
+                                                  
+                                                    i = i + 1
+                                                  until i > 600
+                                                  
+                                                  
+                                                  
+                                                  character.HumanoidRootPart.CFrame = CFrame.new(initialPosition)
+                                                                                  end)
+  local ObjetosSection = Objetos:NewSection("Light tools")
+
+   ObjetosSection:NewButton("Big light", "you know read", function(steate)
+    
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local camera = game.Workspace.CurrentCamera
+    
+    -- Guardar la posición y orientación original de la cámara
+    local originalCFrame = camera.CFrame
+    
+    -- Calcular la nueva posición de la cámara para alejarla del personaje
+    local nuevaPosicion = humanoidRootPart.Position + Vector3.new(0, 1110, -3110) -- Ajusta estos valores según sea necesario
+    
+    -- Establecer la posición de la cámara
+    camera.CFrame = CFrame.new(nuevaPosicion)
+    camera.CameraType = Enum.CameraType.Scriptable -- Bloquea el control de la cámara
+
+    wait(1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-91.5566101, -0.368456542, 871.8302, -0.658705592, 4.03681977e-09, 0.752400756, 5.92821481e-09, 1, -1.75267564e-10, -0.752400756, 4.34494396e-09, -0.658705592)
+
+    wait(1)
+
+   local args = {
+   [1] = "ClearAllTools"
+       }
+                                                                                   
+   game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Clea1rTool1s"):FireServer(unpack(args))
+                                    
+    wait(1)
+    local args = {
+      [1] = "PickingTools",
+      [2] = "FlashLight"
+  }
+  
+  game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+  
+  local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+  -- Obtén una referencia al jugador que desea seleccionar la herramienta
+  local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+  
+  -- Itera a través de las herramientas en el inventario del jugador
+  for _, tool in pairs(player.Backpack:GetChildren()) do
+      if tool:IsA("Tool") and tool.Name == toolName then
+          -- Activa la herramienta
+          player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+          break -- Deten el bucle una vez que encuentres la herramienta
+      end
+  end
+
+  wait(2)
+
+local args = {
+  [1] = "CharacterChange",
+  [2] = {
+      [1] = 376547767,
+      [2] = 376547341,
+      [3] = 376547633,
+      [4] = 376547092,
+      [5] = 376546668,
+      [6] = 86498113
+  },
+  [3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
 
 
-i = 1
-repeat
+                                    
+wait(4)
+local args = {
+  [1] = "PickingTools",
+  [2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+    if tool:IsA("Tool") and tool.Name == toolName then
+        -- Activa la herramienta
+        player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+        break -- Deten el bucle una vez que encuentres la herramienta
+    end
+end
+
+wait(2)
+
+local args = {
+  [1] = "CharacterChange",
+  [2] = {
+      [1] = 28279160,
+      [2] = 28279217,
+      [3] = 28279859,
+      [4] = 28279938,
+      [5] = 28279894,
+      [6] = 0
+  },
+  [3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(4)
+local args = {
+  [1] = "PickingTools",
+  [2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
 
 
-character.HumanoidRootPart.CFrame = CFrame.new(destination)
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+  if tool:IsA("Tool") and tool.Name == toolName then
+      -- Activa la herramienta
+      player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+      break -- Deten el bucle una vez que encuentres la herramienta
+  end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+  [1] = 376547767,
+  [2] = 376547341,
+  [3] = 376547633,
+  [4] = 376547092,
+  [5] = 376546668,
+  [6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
 
 
-fireclickdetector(Workspace.WorkspaceCom["001_GiveTools"].FireX.ClickDetector)
+                                
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+    -- Activa la herramienta
+    player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+    break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+  [1] = 28279160,
+  [2] = 28279217,
+  [3] = 28279859,
+  [4] = 28279938,
+  [5] = 28279894,
+  [6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(4)
+local args = {
+  [1] = "PickingTools",
+  [2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+  if tool:IsA("Tool") and tool.Name == toolName then
+      -- Activa la herramienta
+      player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+      break -- Deten el bucle una vez que encuentres la herramienta
+  end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+  [1] = 376547767,
+  [2] = 376547341,
+  [3] = 376547633,
+  [4] = 376547092,
+  [5] = 376546668,
+  [6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+                                
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+    -- Activa la herramienta
+    player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+    break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+  [1] = 28279160,
+  [2] = 28279217,
+  [3] = 28279859,
+  [4] = 28279938,
+  [5] = 28279894,
+  [6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+  -- Activa la herramienta
+  player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+  break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 376547767,
+[2] = 376547341,
+[3] = 376547633,
+[4] = 376547092,
+[5] = 376546668,
+[6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+                            
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+-- Activa la herramienta
+player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 28279160,
+[2] = 28279217,
+[3] = 28279859,
+[4] = 28279938,
+[5] = 28279894,
+[6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+wait(4)
+local args = {
+  [1] = "PickingTools",
+  [2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+  if tool:IsA("Tool") and tool.Name == toolName then
+      -- Activa la herramienta
+      player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+      break -- Deten el bucle una vez que encuentres la herramienta
+  end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+  [1] = 376547767,
+  [2] = 376547341,
+  [3] = 376547633,
+  [4] = 376547092,
+  [5] = 376546668,
+  [6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+                                
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+    -- Activa la herramienta
+    player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+    break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+  [1] = 28279160,
+  [2] = 28279217,
+  [3] = 28279859,
+  [4] = 28279938,
+  [5] = 28279894,
+  [6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+  -- Activa la herramienta
+  player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+  break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 376547767,
+[2] = 376547341,
+[3] = 376547633,
+[4] = 376547092,
+[5] = 376546668,
+[6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+                            
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+-- Activa la herramienta
+player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 28279160,
+[2] = 28279217,
+[3] = 28279859,
+[4] = 28279938,
+[5] = 28279894,
+[6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+  -- Activa la herramienta
+  player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+  break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 376547767,
+[2] = 376547341,
+[3] = 376547633,
+[4] = 376547092,
+[5] = 376546668,
+[6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+                            
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+-- Activa la herramienta
+player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 28279160,
+[2] = 28279217,
+[3] = 28279859,
+[4] = 28279938,
+[5] = 28279894,
+[6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+-- Activa la herramienta
+player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 376547767,
+[2] = 376547341,
+[3] = 376547633,
+[4] = 376547092,
+[5] = 376546668,
+[6] = 86498113
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+                        
+wait(4)
+local args = {
+[1] = "PickingTools",
+[2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+local toolName = "FlashLight" -- Reemplaza con el nombre de la herramienta que deseas seleccionar
+
+-- Obtén una referencia al jugador que desea seleccionar la herramienta
+local player = game.Players.LocalPlayer -- Reemplaza con el jugador correcto
+
+-- Itera a través de las herramientas en el inventario del jugador
+for _, tool in pairs(player.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == toolName then
+-- Activa la herramienta
+player.Character:WaitForChild("Humanoid"):EquipTool(tool)
+break -- Deten el bucle una vez que encuentres la herramienta
+end
+end
+
+wait(2)
+
+local args = {
+[1] = "CharacterChange",
+[2] = {
+[1] = 28279160,
+[2] = 28279217,
+[3] = 28279859,
+[4] = 28279938,
+[5] = 28279894,
+[6] = 0
+},
+[3] = "AllBlocky"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+
+wait(2)
+local args = {
+  [1] = "PickingTools",
+  [2] = "FlashLight"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+
+wait(1)
+
+
+local args = {
+  [1] = "OCA"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Avata1rOrigina1l"):FireServer(unpack(args))
+
+wait(2)
+
+local personaje = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+
+personaje.Humanoid.Health = 0
+
+
+wait(7)
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+function equipAllTools()
+    local backpack = LocalPlayer.Backpack
+    local character = LocalPlayer.Character
+    
+    for _, tool in pairs(backpack:GetChildren()) do
+        if tool:IsA("Tool") then
+            tool.Parent = character
+        end
+    end
+end
+
+equipAllTools()
+
+wait(2)
+local camera = game.Workspace.CurrentCamera
+
+-- Restaurar la posición y orientación original de la cámara
+camera.CFrame = originalCFrame
+
+
+
+     end)
+                  
+                                                                                                                                    
+                                                                                  
+ local ObjetosSection = Objetos:NewSection("Effects tools")
+
+ ObjetosSection:NewButton("Money", "you know read", function(steate)
+  local player = game.Players.LocalPlayer
+  local character = player.Character or player.CharacterAdded:Wait()
+  local initialPosition = character.HumanoidRootPart.Position
+  
+  
+  local destination = Vector3.new(-354.371613, 44.3410492, -109.058571, -0.480612487, 7.83749314e-08, -0.876933098, -2.33469644e-09, 1, 9.06534581e-08, 0.876933098, 4.56165559e-08, -0.480612487)
+  
+  
+  i = 1
+  repeat
+  
+  
+  character.HumanoidRootPart.CFrame = CFrame.new(destination)
+  
+  
+  fireclickdetector(Workspace.WorkspaceCom["001_GiveTools"].Money.ClickDetector)
+  
+  wait()
+  
+    i = i + 1
+  until i > 600
+  
+  
+  
+  character.HumanoidRootPart.CFrame = CFrame.new(initialPosition)
+                                  end)
+
+
+--MATAR
+
+local MATAR = Window:NewTab("Kill")
+local MATARSection = MATAR:NewSection("Goto")
+
+
+local toggleActive = false
+
+MATARSection:NewToggle("beta-freezer door", "ToggleInfo", function(state)
+    toggleActive = state
+
+    local function toggleLoop()
+        while toggleActive do
+          local args = {
+            [1] = "GroceryStoreFridge",
+            [2] = workspace:WaitForChild("WorkspaceCom"):WaitForChild("001_FridgeDoors"):WaitForChild("Window3")
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Max1y"):FireServer(unpack(args))
 wait()
+local args = {
+  [1] = "GroceryStoreFridge",
+  [2] = workspace:WaitForChild("WorkspaceCom"):WaitForChild("001_FridgeDoors"):WaitForChild("Window3")
+}
 
-  i = i + 1
-until i > 40
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Max1y"):FireServer(unpack(args))
+wait()
+local args = {
+  [1] = "GroceryStoreFridge",
+  [2] = workspace:WaitForChild("WorkspaceCom"):WaitForChild("001_FridgeDoors"):WaitForChild("Window3")
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Max1y"):FireServer(unpack(args))
+wait()
+local args = {
+  [1] = "GroceryStoreFridge",
+  [2] = workspace:WaitForChild("WorkspaceCom"):WaitForChild("001_FridgeDoors"):WaitForChild("Window3")
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Max1y"):FireServer(unpack(args))
+wait()
+local args = {
+  [1] = "GroceryStoreFridge",
+  [2] = workspace:WaitForChild("WorkspaceCom"):WaitForChild("001_FridgeDoors"):WaitForChild("Window3")
+}
 
-character.HumanoidRootPart.CFrame = CFrame.new(initialPosition)
-                                end)
+game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1Max1y"):FireServer(unpack(args))
 
+        end
+    end
+
+    if toggleActive then
+        spawn(toggleLoop)
+    else
+        print("Toggle Off")
+    end
+end)
